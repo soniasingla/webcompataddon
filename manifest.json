@@ -1,0 +1,20 @@
+{
+    "manifest_version" : 2,
+    "name" : "webcompataddon",
+    "version" : "1.0",
+
+    "author" : "Sonia Singla",
+
+    "description" : "Internal addon to report Web-Compatibility issues.",
+
+    "content_scripts" : [
+        {
+            "matches" : ["*://*.mozilla.org/*"],
+            "js" : ["webcompataddon.js"]
+        }
+    ],
+
+    "permissions" : [
+        "<all_urls>"
+    ]
+}
