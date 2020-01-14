@@ -2,9 +2,7 @@
     "manifest_version" : 2,
     "name" : "webcompataddon",
     "version" : "1.0",
-
     "author" : "Sonia Singla",
-
     "description" : "Internal addon to report Web-Compatibility issues.",
 
     "content_scripts" : [
@@ -15,8 +13,8 @@
     ],
 
     "browser_action": {
-        "default_popup": "confirmation-page/confirmation-page.html"
-    },
+        "default_icon": "icons/lightbulb.svg",
+        "default_popup": "popups/_index.html"
+      },
     "permissions" : []
 }
-
