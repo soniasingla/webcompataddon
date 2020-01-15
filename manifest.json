@@ -14,7 +14,7 @@
 
     "browser_action": {
         "default_icon": "icons/lightbulb.svg",
-        "default_popup": "popup/_index.html"
+        "default_popup": "popup/popup.html"
       },
     "permissions" : []
 }
