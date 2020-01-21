@@ -10,16 +10,19 @@
         <div id="current-url">
             <h3> Please enter the URL where you encountered the web compatibility issue</h3><br>
             <h3> Do we have the correct site? </h3>
-            <div id="current-page"></div>
-            <label for="current-page-report">
-            <input type="url" id="crashed-site">
+            <div id="current-page">
+            <label for="myurl">
+            <input type="url" name="myurl" id="myurl" required pattern=".*\.*\..*"><span class="validity"></span>
             </label>
         </div>
     </div>
     <div class="control-button">
-    <a href="/popup/options.html" class="next" id="next-popup-link">Confirm</a>
-    <a href="https://webcompat.com/" class="learn-more" id="learnmore-about">learn-more</a>
+      <span class="button">
+    <button type="submit"><a href="/popup/options.html" class="next" id="next-popup-link" >Confirm</a></button>
+   <button > <a href="https://webcompat.com/" class="learn-more" id="learnmore-about" onclick=" isURL(document.getElementById("crashed-site".value))">Learn-More</a></button>
+  </span>
     </div>
   <script src="popup.js"></script>
+  <!-- <script src="p"    </script> -->
 </body>
 </html>
