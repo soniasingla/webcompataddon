@@ -1,4 +1,4 @@
-import { URL } from "url";
+/*import { URL } from "url";
 
 export default function isReportableURL(url) {
   if (!URL) {
@@ -10,4 +10,4 @@ export default function isReportableURL(url) {
   } catch (error) {
     return false;
   }
-}
+}*/
