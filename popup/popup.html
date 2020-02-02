@@ -1,28 +1,53 @@
 <!DOCTYPE html>
-<html>
-    <head>
-  <meta content="text/html; charset=utf-8">
-  <title>Report Site Issue</title>
-  <link rel="stylesheet" href="/css/popup.css">
-    </head>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8">
+    <title>Report Site Issue</title>
+    <link rel="stylesheet" href="">
+    <script src="/js/popup.js" defer></script>
+  </head>
 <body>
-    <div class="popup" id="popup-content">
-        <div id="current-url">
-            <h3> Please enter the URL where you encountered the web compatibility issue</h3><br>
-            <h3> Do we have the correct site? </h3>
-            <div id="current-page">
-            <label for="myurl">
-            <input type="url" name="myurl" id="myurl" required pattern=".*\.*\..*"><span class="validity"></span>
-            </label>
-        </div>
-    </div>
-    <div class="control-button">
-      <span class="button">
-    <button type="submit"><a href="/popup/options.html" class="next" id="next-popup-link" >Confirm</a></button>
-   <button > <a href="https://webcompat.com/" class="learn-more" id="learnmore-about" onclick=" isURL(document.getElementById("crashed-site".value))">Learn-More</a></button>
-  </span>
-    </div>
-  <script src="popup.js"></script>
-  <!-- <script src="p"    </script> -->
+  <form>
+      <section class="form-step" id="form-step-0">
+         <h3> Please enter the URL where you encountered the web compatibility issue</h3><br>
+         <h3> Do we have the correct site? </h3>
+         <label for="myurl"></label>
+         <input type="url" name="myurl" id="myurl" required pattern=".*\.*\..*"><span class="validity"></span>
+      </section>
+      <section class="form-step" id="form-step-1">
+         <a class="wrong_page" href="add-website-here" target="_self"><span>Desktop site instead of mobile site</a><br>
+         <a class="wrong_page" href="/popup/siteissues.html" target="_self"><span>Site is not usable </a><br>
+         <a class="wrong_page" href="/popup/designissues.html" target="_self"><span>Design is broken</a><br>
+         <a class="wrong_page" href="/popup/videoissues.html" target="_self"><span>Video or audio doesn't play</a><br>
+         <a class="wrong_page" href="add-website-here" target="_self"><span>Something else</a><br>
+         <a class="wrong_page" href="/popup/popup.html" target="_self"><span>GO BACK</a><br>
+      </section>
+      <section class="form-step" id="form-step-2">
+         <a class="wrong_page" href="add-website-here" target="_self"><span>Browser unsupported</a><br>
+         <a class="wrong_page" href="/popup/siteissues.html" target="_self"><span>Page not loading correctly  </a><br>
+         <a class="wrong_page" href="/popup/designissues.html" target="_self"><span>Missing items</a><br>
+         <a class="wrong_page" href="/popup/videoissues.html" target="_self"><span>Buttons or links not working</a><br>
+         <a class="wrong_page" href="add-website-here" target="_self"><span>Unable to type</a><br>
+         <a class="wrong_page" href="add-website-here" target="_self"><span>Unable to login</a><br>
+         <a class="wrong_page" href="add-website-here" target="_self"><span>Problems with Captcha</a><br>
+         <a class="wrong_page" href="/popup/options.html" target="_self"><span>GO BACK</a><br>
+      </section>
+      <section class="form-step" id="form-step-3">
+         <a class="wrong_page" href="add-website-here" target="_self"><span>Images not loaded</a><br>
+         <a class="wrong_page" href="/popup/siteissues.html" target="_self"><span>Items are overlapped </a><br>
+         <a class="wrong_page" href="/popup/designissues.html" target="_self"><span>Items are misaligned</a><br>
+         <a class="wrong_page" href="/popup/videoissues.html" target="_self"><span>Items not fully visible</a><br>
+         <a class="wrong_page" href="/popup/options.html" target="_self"><span>GO BACK</a><br>
+      </section>
+      <section class="form-step" id="form-step-4">
+        <a class="wrong_page" href="add-website-here" target="_self"><span>There is no video</a><br>
+        <a class="wrong_page" href="/popup/siteissues.html" target="_self"><span>There is no audio</a><br>
+        <a class="wrong_page" href="/popup/designissues.html" target="_self"><span>Media controls are broken or missing</a><br>
+        <a class="wrong_page" href="/popup/videoissues.html" target="_self"><span>The video or audio does not play</a><br>
+        <a class="wrong_page" href="/popup/options.html" target="_self"><span>GO BACK</a><br>
+      </section>
+      <button id="form-prev">Previous</button>
+      <button id="form-next">Next</button>
+</form>
 </body>
 </html>
