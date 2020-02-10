@@ -16,6 +16,18 @@ body {
   padding-block-end: 0;
 }
 
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+h3{
+  text-align: center;
+}
+
 .wrong_page {
   display: inline-block;
   border-radius: 4px;
