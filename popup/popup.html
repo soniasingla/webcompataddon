@@ -1,49 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta content="text/html; charset=utf-8">
+    <meta content="text/html; charset=utf-8" />
     <title>Report Site Issue</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <script src="/js/popup.js" defer></script>
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/popup.js"></script>
   </head>
-<body>
-  <form>
+  <body>
+    <form>
       <section class="form-step" id="form-step-0">
-         <h3> Please enter the URL where you encountered the web compatibility issue</h3><br>
-         <h3> Do we have the correct site? </h3>
-         <label for="myurl"></label>
-         <input type="url" name="myurl" id="myurl" required pattern=".*\.*\..*"><span class="validity"></span>
+        <h3>Please enter the URL where you encountered the web compatibility issue.</h3>
+        <h3>Do we have the correct site?</h3>
+        <input type="url" name="myurl" id="myurl" required pattern=".*\.*\..*" />
+        <span class="validity"></span>
+        <button id="site_url_confirm">
+          Confirm
+        </button>
+        <button id="site_url_learn_more">
+          Learn more
+        </button>
       </section>
+
       <section class="form-step" id="form-step-1">
-         <div class="wrong_page">Desktop site instead of mobile site</div><br>
-         <div class="wrong_page">Site is not usable </div><br>
-         <div class="wrong_page">Design is broken</div><br>
-         <div class="wrong_page">Video or audio doesn't play</div><br>
-         <div class="wrong_page">Something else</div><br>
+        <input type="radio" name="issue_category" id="issue_category_desktop_site" value="desktop_site" />
+        <label class="large-button" for="issue_category_desktop_site">Desktop site instead of mobile site</label>
+
+        <input type="radio" name="issue_category" id="issue_category_not_usable" value="site_not_usable" />
+        <label class="large-button" for="issue_category_not_usable">Site is not usable</label>
+
+        <input type="radio" name="issue_category" id="issue_category_design_broken" value="design_broken" />
+        <label class="large-button" for="issue_category_design_broken">Design is broken</label>
+
+        <input type="radio" name="issue_category" id="issue_category_video_or_audio" value="video_audio_unsupported" />
+        <label class="large-button" for="issue_category_video_or_audio">Video or audio doesn't play</label>
+
+        <input type="radio" name="issue_category" id="issue_category_something_else" value="something_else" />
+        <label class="large-button" for="issue_category_something_else">Something else</label>
       </section>
+
       <section class="form-step" id="form-step-2">
-         <div class="wrong_page">Browser unsupported</div><br>
-         <div class="wrong_page">Page not loading correctly</div><br>
-         <div class="wrong_page">Missing items</div><br>
-         <div class="wrong_page">Buttons or links not working</div><br>
-         <div class="wrong_page">Unable to type</div><br>
-         <div class="wrong_page">Unable to login</div><br>
-         <div class="wrong_page">Problems with Captcha</div><br>
+        <section class="issue-type" id="issue_cat_site_not_usable">
+          <input type="radio" name="issue_type" id="issue_browser_unsupported" value="browser_unsupported" />
+          <label class="large-button" for="issue_browser_unsupported">Browser unsupported</label>
+
+          <input type="radio" name="issue_type" id="issue_page_not_loading" value="page_not_loading" />
+          <label class="large-button" for="issue_page_not_loading">Page not loading correctly</label>
+
+          <input type="radio" name="issue_type" id="issue_missing_items" value="missing_items" />
+          <label class="large-button" for="issue_missing_items">Missing items</label>
+
+          <input type="radio" name="issue_type" id="issue_buttons_or_links_not_working" value="buttons_or_links_not_working" />
+          <label class="large-button" for="issue_buttons_or_links_not_working">Buttons or links not working</label>
+
+          <input type="radio" name="issue_type" id="issue_unable_to_type" value="unable_to_type" />
+          <label class="large-button" for="issue_unable_to_type">Unable to type</label>
+
+          <input type="radio" name="issue_type" id="issue_unable_to_login" value="unable_to_login" />
+          <label class="large-button" for="issue_unable_to_login">Unable to login</label>
+
+          <input type="radio" name="issue_type" id="issue_problems_with_captcha" value="problems_with_captcha" />
+          <label class="large-button" for="issue_problems_with_captcha">Problems with Captcha</label>
+        </section>
+
+        <section class="issue-type" id="issue_cat_design_broken">
+          <input type="radio" name="issue_type" id="issue_images_not_loaded" value="images_not_loaded" />
+          <label class="large-button" for="issue_images_not_loaded">Images not loaded</label>
+
+          <input type="radio" name="issue_type" id="issue_items_overlapped" value="items_overlapped" />
+          <label class="large-button" for="issue_items_overlapped">Items are overlapped</label>
+
+          <input type="radio" name="issue_type" id="issue_items_misaligned" value="items_misaligned" />
+          <label class="large-button" for="issue_items_misaligned">Items are misaligned</label>
+
+          <input type="radio" name="issue_type" id="issue_items_not_fully_visible" value="items_not_fully_visible" />
+          <label class="large-button" for="issue_items_not_fully_visible">Items not fully visible</label>
+        </section>
+
+        <section class="issue-type" id="issue_cat_video_audio_unsupported">
+          <input type="radio" name="issue_type" id="issue_no_video" value="no_video" />
+          <label class="large-button" for="issue_no_video">There is no video</label>
+
+          <input type="radio" name="issue_type" id="issue_no_audio" value="no_audio" />
+          <label class="large-button" for="issue_no_audio">There is no audio</label>
+
+          <input type="radio" name="issue_type" id="issue_media_controls" value="media_controls" />
+          <label class="large-button" for="issue_media_controls">Media controls are broken or missing</label>
+
+          <input type="radio" name="issue_type" id="issue_media_playback" value="media_playback" />
+          <label class="large-button" for="issue_media_playback">The video or audio does not play</label>
+        </section>
+
+        <section class="issue-type" id="issue_cat_something_else">
+          <input type="text" placeholder="Please explain what's broken." />
+        </section>
       </section>
+      <!--This step will explain the issue encontered on specific browser and operating system. -->
       <section class="form-step" id="form-step-3">
-         <div class="wrong_page">Images not loaded</div><br>
-         <div class="wrong_page">Items are overlapped </div><br>
-         <div class="wrong_page">Items are misaligned</div><br>
-         <div class="wrong_page">Items not fully visible</div><br>
+        <h3>Please select other browsers you have tested on</h3>
+        <input type="radio" id="test_browser_1" value="chrome" />
+        <label for="test_browser_1">Chrome</label>
+        <input type="radio" id="test_browser_2" value="edge" />
+        <label for="test_browser_2">Edge</label>
+        <input type="radio" id="test_browser_3" value="safari" />
+        <label for="test_browser_3">Safari</label>
+        <input type="radio" id="test_browser_4" value="opera" />
+        <label for="test_browser_4">Opera</label>
+        <input type="radio" id="test_browser_5" value="internetexplorer" />
+        <label for="test_browser_5">Internet Explorer</label>
+        <input type="radio" id="test_browser_6" value="other" />
+        <label for="test_browser_6">Other</label>
+        <button id="confirm_button">Confirm</button>
       </section>
+
+      <!--This step includes the bug description-->
       <section class="form-step" id="form-step-4">
-        <div class="wrong_page">There is no video</div><br>
-        <div class="wrong_page">There is no audio</div><br>
-        <div class="wrong_page">Media controls are broken or missing</div><br>
-        <div class="wrong_page">The video or audio does not play</div><br>
+        <textarea class="issue-description" id="description_of_bug" placeholder="Describe what happened" rows="4"></textarea>
+        <button id="continue_button">Continue</button>
+      </section>
+      <section class="form-step" id="form-step-5">
+        <h3>Thank you for submitting the report !</h3>
       </section>
       <button id="form-prev">Previous</button>
-      <button id="form-next">Next</button>
-</form>
-</body>
+    </form>
+  </body>
 </html>
