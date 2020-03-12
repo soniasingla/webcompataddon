@@ -1,0 +1,25 @@
+/* CSS in `visual.css` is only used to make things look nice. Ignore them for now. */
+
+html,
+body {
+  width: 300px;
+  height: 400px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.large-button {
+  background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+  border-radius: 4px;
+  display: block;
+  margin: 5px 0;
+  padding: 10px 5px;
+}
+
+section {
+  border: 1px solid black;
+  max-width: 400px;
+  padding: 5px 10px;
+}
