@@ -1,48 +1,109 @@
-/*function isURL(str) {
-    var pattern = new RegExp('^(https?:\\/\\/)?'+
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+
-    '((\\d{1,3}\\.){3}\\d{1,3}))'+
-    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+
-    '(\\?[;&a-z\\d%_.~+=-]*)?'+
-    '(\\#[-a-z\\d_]*)?$','i'); 
-    return pattern.test(str);
-  }*/
-  // This is a global object to store information about what the form is currently doing.
-// Right now, this is only holding the currently active form step
-
+/**
+ * For now, this only holds the number of the currently active form step.
+ */
 window.state = {
   activeStep: 0
 };
 
-// This function hides all form steps, then shows whatever is currently active
-function updateFormVisibility() {
-  // First, make sure that all form steps are hidden
-  document.querySelectorAll(".form-step").forEach((step) => {
-    step.classList.remove("active")
+// ====== HELPERS ==============================================================
+
+/**
+ * This function makes sure that only the currently active form step is visible.
+ * It uses the global variable `window.state.activeStep` to determine which
+ * step should be active.
+ */
+function updateStepVisibility() {
+  document.querySelectorAll(".form-step").forEach(step => {
+    step.classList.remove("active");
   });
 
-  // Next, show the right step
   document.getElementById(`form-step-${window.state.activeStep}`).classList.add("active");
 }
 
+/**
+ * Increases the global counter variable by one and updating the form,
+ * effectively moving to the next step.
+ */
+function showNextFormStep() {
+  window.state.activeStep += 1;
+  updateStepVisibility();
+}
+
+/**
+ * Decreses the global counter variable by one and updating the form,
+ * effectively moving to the previous step.
+ */
+function showPreviousFormStep() {
+  window.state.activeStep -= 1;
+  updateStepVisibility();
+}
+
+/**
+ * Makes sure that all active subsections are hidden, except for the
+ * one we want to see.
+ */
+function showIssueTypesForCategory(category) {
+  var issueList = document.querySelectorAll(".issue-type.active");
+  issueList.forEach(issueList => issueList.classList.remove("active"));
+  showNextFormStep();
+
+  var targetSection = document.getElementById(category);
+  targetSection.classList.add("active");
+
+  updateStepVisibility();
+}
+
+// ====== EVENT HANDLERS =======================================================
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Let's add an event listener to the next button
-  document.getElementById("form-next").addEventListener("click", (ev) => {
-    // make sure that the button does not submit the form
-    ev.preventDefault();
+  /**
+   * Update the form step visibility after load, to make sure the first step is visible.
+   */
+  updateStepVisibility();
 
-    // Its' the next button, so let's increment the counter and update the form.
-    window.state.activeStep += 1;
-    updateFormVisibility();
+  /**
+   * Handle clicks on the previoys button, using the showPreviousFormStep() function.
+   */
+  document.getElementById("form-prev").addEventListener("click", ev => {
+    ev.preventDefault();
+    showPreviousFormStep();
   });
 
-  // do the same for the previous buttons
-  document.getElementById("form-prev").addEventListener("click", (ev) => {
+  /**
+   * Handles clicking on the "confirm" button inside the first form step asking for a URL.
+   */
+  document.getElementById("site_url_confirm").addEventListener("click", ev => {
     ev.preventDefault();
-    window.state.activeStep -= 1;
-    updateFormVisibility();
+    showNextFormStep();
   });
 
-  // Now, make sure to call the
-  updateFormVisibility();
+  /**
+   * Fires when the user selects one of the issue categories.
+   */
+  document.querySelectorAll("input[name='issue_category']").forEach(input => {
+    input.addEventListener("change", ev => {
+      const value = ev.target.value;
+      const section_display = `issue_cat_${value}`;
+      showIssueTypesForCategory(section_display);
+    });
+  });
+
+  document.querySelectorAll("input[name='issue_type']").forEach(input => {
+    input.addEventListener("change", ev1 => {
+      const value1 = ev1.target.value1;
+      const display_form = `issue_cat_${value1}`;
+      showIssueTypesForCategory(display_form);
+      showNextFormStep();
+    });
+  });
+  
+  document.getElementById("confirm_button").addEventListener("click", ev => {
+    ev.preventDefault();
+    showNextFormStep();
+  });
+  
+  document.getElementById("continue_button").addEventListener("click", ev =>{
+    ev.preventDefault();
+    showNextFormStep();
+  })
 });
