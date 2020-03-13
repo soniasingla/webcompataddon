@@ -22,3 +22,18 @@ section {
   max-width: 400px;
   padding: 5px 10px;
 }
+
+#myurl{
+  line-height: 18.4px;
+  font-size: 12px;
+}
+
+#site_url_confirm{
+  font-size: 14px;
+}
+
+button:hover
+{
+  border: 1px solid #d8d8d8;
+  background: #f2f2f2;
+}
