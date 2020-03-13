@@ -11,15 +11,12 @@
     <form>
       <section class="form-step" id="form-step-0">
         <h3><strong>Please enter the URL </strong>where you encountered the web compatibility issue.</h3>
-        <h3>Do we have the correct site?</h3>
-        <input type="url" name="myurl" id="myurl"  required pattern=".*\.*\..*" />
-        <span class="validity"></span><br>
+        <input type="url" name="myurl" id="myurl" placeholder="e.g. https://example.com" required pattern=".*\.*\..*" size="40"/>
+        <span class="validity"></span>
         <button id="site_url_confirm">
           Confirm
-        </button>
-        <button id="site_url_learn_more">
-          Learn more
-        </button>
+        </button><br><br>
+        <a href="https://webcompat.com/">Learn more about web compatibility</a>
       </section>
 
       <section class="form-step" id="form-step-1">
