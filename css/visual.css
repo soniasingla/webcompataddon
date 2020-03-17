@@ -8,16 +8,21 @@ body {
 
 h3 {
   text-align: center;
+  margin-top: 0px;
 }
 
 .large-button {
-  background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+  /*background: linear-gradient(to right, #67b26b, #4ca2cb) !important;*/
+  background: #FFFFFF;
   border-radius: 4px;
-  display: block;
+  display: inline-block;
   margin: 5px 0;
   padding: 10px 5px;
 }
-
+p {
+margin-top: -40px;
+margin-left: -40px;
+}
 section {
   max-width: 400px;
   padding: 5px 10px;
@@ -42,5 +47,9 @@ section {
 }
 
 #site_url_confirm:hover, #form-prev:hover{
+  background-color: #f2f2f2;
+}
+
+p:hover{
   background-color: #f2f2f2;
 }
