@@ -50,3 +50,15 @@ section {
 .large-button:hover{
   background-color: #f2f2f2;
 }
+
+.issues-icon
+{
+  width:32px;
+  height:32px;
+  background-color:rgba(86, 99, 140, 1);;
+}
+
+p
+{
+  margin: 0;
+}
