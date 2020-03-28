@@ -55,7 +55,13 @@ section {
 {
   width:32px;
   height:32px;
-  background-color:rgba(86, 99, 140, 1);;
+  box-sizing: border-box;
+  float: none;
+  background-color:rgba(86, 99, 140, 1);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 p
