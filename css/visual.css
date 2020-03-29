@@ -82,3 +82,28 @@ p
 input[type=text] {
   width: 300px;
 }
+
+.browser-icons
+{
+  display: inline-flex;
+  box-sizing: border-box;
+  float: none;
+  padding: 5px 10px;
+  margin-block-end: auto;
+  margin-block-start: auto;
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+
+}
+
+.browser-button
+{
+  display: inline-block;
+  margin: 0;
+  padding: 5px 10px;
+  position: absolute;
+  margin-block-end: auto;
+  margin-block-start: auto;
+  margin-inline-end: auto;
+  margin-inline-start: 5px;
+}
