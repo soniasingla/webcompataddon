@@ -13,11 +13,16 @@ h3 {
 
 .large-button {
   /*background: linear-gradient(to right, #67b26b, #4ca2cb) !important;*/
-  background: #FFFFFF;
-  border-radius: 4px;
+  background: #ffffff;
+  border-radius: 2.5px;
   display: inline-block;
-  margin: 5px 0;
-  padding: 10px 5px;
+  margin: 0;
+  padding: 5px 10px;
+  position: absolute;
+  margin-block-end: auto;
+  margin-block-start: auto;
+  margin-inline-end: auto;
+  margin-inline-start: 5px;
 }
 
 section {
@@ -57,11 +62,16 @@ section {
   height:32px;
   box-sizing: border-box;
   float: none;
+  padding: 5px 10px;
   background-color:rgba(86, 99, 140, 1);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-bottom-left-radius: 2.5px;
+  border-bottom-right-radius: 2.5px;
+  border-top-left-radius: 2.5px;
+  border-top-right-radius: 2.5px;
+  margin-block-end: auto;
+  margin-block-start: auto;
+  margin-inline-end: auto;
+  margin-inline-start: auto;
 }
 
 p
