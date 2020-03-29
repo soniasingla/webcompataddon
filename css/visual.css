@@ -23,6 +23,7 @@ h3 {
   margin-block-start: auto;
   margin-inline-end: auto;
   margin-inline-start: 5px;
+  white-space: nowrap;
 }
 
 section {
