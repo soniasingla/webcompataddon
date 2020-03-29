@@ -68,3 +68,7 @@ p
 {
   margin: 0;
 }
+
+input[type=text] {
+  width: 300px;
+}
